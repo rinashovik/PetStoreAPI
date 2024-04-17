@@ -84,12 +84,15 @@ public class UserTestCases {
 		
 		
 		Response response = UserEndPoints.deleteUser(userPayload.getUsername());
-//		response.then().log().all();
+		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
 		
 		
 		
 	}
+	
+	
+	
 	
 }
