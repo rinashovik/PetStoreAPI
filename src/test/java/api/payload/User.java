@@ -9,27 +9,9 @@ public class User {
 	private String email;
 	private String password;
 	private String phone;
-	 int userStatus= 0;
+	int userStatus= 0;
 	
 	
-	
-	
-	
-//	public User(int id, String userName, String firstName, String lastName, String email, String password, String phone,
-//			int userStatus) {
-//		super();
-//		this.id = id;
-//		this.userName = userName;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.email = email;
-//		this.password = password;
-//		this.phone = phone;
-//		this.userStatus = userStatus;
-//	}
-//	public User() {
-//		// TODO Auto-generated constructor stub
-//	}
 	
 	
 	public int getId() {
@@ -74,12 +56,6 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-//	public int getUserStatus() {
-//		return userStatus;
-//	}
-//	public void setUserStatus(int userStatus) {
-//		this.userStatus = userStatus;
-//	}
 
 
 

@@ -39,10 +39,24 @@ public class UserTestCases {
 	public void testPostUser() {
 		
 		Response response = UserEndPoints.CreateUser(userPayload);
+		System.out.println("\n****************\n");
+
+		System.out.print("\nLength : " +response.contentType().length());
+		System.out.println("\n****************\n");
+		response.then().log().body();
+
+		
+		System.out.println("\n*******Cookies********\n");
+		
+		response.then().log().cookies();
+		
+		System.out.println("\n****************\n");
+
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(),200);
 		
-		
+		Assert.assertTrue(true);
+	
 	}
 	
 	@Test (priority=2)
