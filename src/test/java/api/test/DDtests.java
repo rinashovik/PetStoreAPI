@@ -12,13 +12,13 @@ public class DDtests {
 
 	
 	@Test(priority=1, dataProvider="Data", dataProviderClass=DataProviders.class)
-	public void testPostuser(String userId, String username, String firstName, String lastName, String email, String password, String phone) {
+	public void testPostUser(String userId, String userName, String firstName, String lastName, String email, String password, String phone) {
 		
 		
 		User payload = new User();
 		
 		payload.setId(Integer.parseInt(userId));
-		payload.setUsername(username);
+		payload.setUsername(userName);
 		payload.setFirstName(firstName);	
 		payload.setLastName(lastName);
 		payload.setEmail(email);
@@ -26,16 +26,18 @@ public class DDtests {
 		payload.setPhone(phone);
 		
 		Response response = UserEndPoints.CreateUser(payload);
+		System.out.print(response.then().log().all());
+
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
 	}
 	
 	
 	@Test(priority=2, dataProvider="UserNames", dataProviderClass= DataProviders.class)
-	public void testdeleteUserByName(String username) {
+	public void testdeleteUserByName(String userName) {
 		
 		
-		Response response = UserEndPoints.deleteUser(username);
+		Response response = UserEndPoints.deleteUser(userName);
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
 	}

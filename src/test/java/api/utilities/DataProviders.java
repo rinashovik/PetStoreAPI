@@ -5,8 +5,9 @@ package api.utilities;
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
+	
 
-	public class DataProviders {
+public class DataProviders {
 	
 	
 		@DataProvider(name="Data")
@@ -14,13 +15,15 @@ import org.testng.annotations.DataProvider;
 	
 	{
 		
-//		String path = System.getProperty("user.dir") + "//UserTestData.xlsx";
-				String path = System.getProperty("//testData/userTestData.xlsx")	;	
+		String path = System.getProperty("user.dir") + "\\testData\\UserTestData.xlsx";
+				
+				
+				System.out.println(path);
 		
 		XLUtility xl = new XLUtility(path);
 		
-		int rownum = xl.getRowCount("sheet1");
-		int colCount = xl.getCellCount("sheet1", 1);
+		int rownum = xl.getRowCount("Sheet1");
+		int colCount = xl.getCellCount("Sheet1", 1);
 		
 		
 		String apiData[][] = new String[rownum][colCount];
@@ -30,7 +33,7 @@ import org.testng.annotations.DataProvider;
 			for(int j=0; j<colCount; j++) {
 				
 				
-				apiData[i-1][j] = xl.getCellData("sheet1", i, j);
+				apiData[i-1][j] = xl.getCellData("Sheet1", i, j);
 
 			}
 			
@@ -45,12 +48,12 @@ import org.testng.annotations.DataProvider;
 	public String [] getUserNames() throws IOException
 	
 	{
-		
-		String path = System.getProperty("user.dir") + "//testData/UserTestData.xlsx";
+		String path = System.getProperty("user.dir") + "//testData//UserTestData.xlsx";
+
 		
 		XLUtility xl = new XLUtility(path);
 		
-		int rownum = xl.getRowCount("sheet1");
+		int rownum = xl.getRowCount("Sheet1");
 		
 		
 		String[] apiData = new String[rownum];
@@ -59,7 +62,7 @@ import org.testng.annotations.DataProvider;
 			
 				
 				
-				apiData[i-1] = xl.getCellData("sheet1", i, 1);
+				apiData[i-1] = xl.getCellData("Sheet1", i, 1);
 
 			
 		}
