@@ -1,8 +1,8 @@
 package api.test;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.core.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,7 +19,7 @@ public class UserTestCases {
 
 	Faker faker;
 	User userPayload;
-	public Logger logger;
+//	public Logger logger;
 	
 	@BeforeClass
 	public void setUpData() {
@@ -37,7 +37,8 @@ public class UserTestCases {
 		userPayload.setPhone(faker.phoneNumber().cellPhone());
 //		userPayload.setUserStatus(faker.numerify(null));
 		
-		logger = (Logger) LogManager.getLogger(this.getClass());
+//		logger = (Logger) LogManager.getLogger(this.getClass());
+	
 		
 		
 	}
@@ -45,9 +46,11 @@ public class UserTestCases {
 	@Test (priority=1)
 	public void testPostUser() {
 		
-	logger.info("**************Create User******************");
+//	logger.info("**************Create User******************");
 		
 		Response response = UserEndPoints.CreateUser(userPayload);
+
+		
 		System.out.println("\n****************\n");
 
 		System.out.print("\nLength : " +response.contentType().length());
@@ -72,10 +75,12 @@ public class UserTestCases {
 	public void testGetUserByName() {
 		
 		
-		logger.info("**************Getting User******************");
+//		logger.info("**************Getting User******************");
 
 		
 		Response response = UserEndPoints.getUser(userPayload.getUsername());
+		
+
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
@@ -90,6 +95,7 @@ public class UserTestCases {
 		
 		//update data by userPayload
 			Response response = UserEndPoints.updateUser(userPayload.getUsername(),userPayload);
+
 			response.then().log().body();
 			Assert.assertEquals(response.getStatusCode(), 200); // testNG assertion
 	
@@ -98,10 +104,11 @@ public class UserTestCases {
 //			
 		//Checking data after updated
 			
-			logger.info("************** User Updated******************");
+//			logger.info("************** User Updated******************");
 
 			
 			Response responseAfterUpdate = UserEndPoints.getUser(userPayload.getUsername());
+
 //			response.then().log().all();
 			Assert.assertEquals(responseAfterUpdate.getStatusCode(), 200);
 				
@@ -112,10 +119,11 @@ public class UserTestCases {
 	@Test(priority=4)
 	public void testDeleteUserByName() {
 		
-		logger.info("**************Deleting  User******************");
+//		logger.info("**************Deleting  User******************");
 
 		
 		Response response = UserEndPoints.deleteUser(userPayload.getUsername());
+
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
