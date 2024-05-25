@@ -1,0 +1,16 @@
+[INFO ] 2024-05-25 11:20:46.222 [main] UserTestCases - **************Create the User******************
+[INFO ] 2024-05-25 11:20:59.943 [main] UserTestCases - **************User is created******************
+[INFO ] 2024-05-25 11:21:00.005 [main] UserTestCases - **************Getting User******************
+[INFO ] 2024-05-25 11:21:00.409 [main] UserTestCases - **************User Info is Displayed******************
+[INFO ] 2024-05-25 11:21:00.428 [main] UserTestCases - *****************User is Updating**************
+[INFO ] 2024-05-25 11:21:01.190 [main] UserTestCases - *****************User Updated******************
+[INFO ] 2024-05-25 11:21:01.207 [main] UserTestCases - **************Deleting User******************
+[INFO ] 2024-05-25 11:21:01.507 [main] UserTestCases - **************User Deleted**********
+[INFO ] 2024-05-25 11:54:49.104 [main] UserTestCases - **************Create the User******************
+[INFO ] 2024-05-25 11:55:02.467 [main] UserTestCases - **************User created******************
+[INFO ] 2024-05-25 11:55:02.623 [main] UserTestCases - **************Getting User Info******************
+[INFO ] 2024-05-25 11:55:02.984 [main] UserTestCases - **************User Info is Displayed******************
+[INFO ] 2024-05-25 11:55:03.003 [main] UserTestCases - **************User Info is Updating******************
+[INFO ] 2024-05-25 11:55:03.622 [main] UserTestCases - **************User Info is Updated******************
+[INFO ] 2024-05-25 11:55:03.674 [main] UserTestCases - **************Deleting User******************
+[INFO ] 2024-05-25 11:55:03.972 [main] UserTestCases - **************User Deleted**********

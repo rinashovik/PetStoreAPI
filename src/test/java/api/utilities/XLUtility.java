@@ -65,7 +65,7 @@ public class XLUtility {
 		workbook = new XSSFWorkbook(fi);
 		sheet = workbook.getSheet(sheetName);
 		row = sheet.getRow(rownum);
-		cell = row.getCell(column);
+		cell = row.getCell(column);//get cell value
 		
 		DataFormatter formatter = new DataFormatter();
 		
@@ -91,7 +91,7 @@ public class XLUtility {
 	public void setCellData(String sheetName, int rownum, int column, String data) throws IOException {
 		
 		
-		File xlfile = new  File(path);
+		File xlfile = new File(path);
 		if(!xlfile.exists())// If sheet not exists the create new sheet
 		{
 			workbook = new XSSFWorkbook();
@@ -105,15 +105,16 @@ public class XLUtility {
 			
 			if(workbook.getSheetIndex(sheet) ==-1)
 		
-				workbook.createSheet(sheetName);
+				workbook.createSheet(sheetName);// Create New Sheet
 			sheet = workbook.getSheet(sheetName);
 			
 			if(sheet.getRow(rownum) == null)// if row not exists then create new row
-				sheet.createRow(rownum);
+				sheet.createRow(rownum);//Create new row
 			row = sheet.getRow(rownum);
 			
-			cell = row.createCell(column);
-			cell.setCellValue(data);
+			cell = row.createCell(column);// create new Column
+			cell.setCellValue(data);// Write new Value
+			
 			fo = new FileOutputStream(path);
 			workbook.write(fo);
 			workbook.close();
